@@ -6,3 +6,10 @@
 
 ### Then run to run the UI, API and unit tests:
 `pytest`
+
+### To Run Locust Perf Tests
+move to the perf tests folder
+`cd tests/perf`
+
+run the locust tests
+`locust`
