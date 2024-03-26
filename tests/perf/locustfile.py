@@ -23,14 +23,13 @@ class EmployeeApiUser(HttpUser):
     @task(1)
     def post_employee(self):
         fake = Faker()
-        for _ in range(50):
-          data = {
-              "firstName": fake.first_name(),
-              "lastName": fake.last_name(),
-              "dependants": random.randint(0, 32)
-          }
-          self.client.post("/employees", json=data)
-          time.sleep(.5)
+        data = {
+            "firstName": fake.first_name(),
+            "lastName": fake.last_name(),
+            "dependants": random.randint(0, 32)
+        }
+        self.client.post("/employees", json=data)
+        time.sleep(.5)
 
     @task(2)
     def get_all_employees(self):
